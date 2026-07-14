@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AddTeam from './components/AddTeam'
+import ViewTeam from './components/ViewTeam'
 
 
 
@@ -11,7 +14,12 @@ function App() {
 
   return (
     <>
-      
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AddTeam />} />
+        <Route path='/view' element={<ViewTeam />} />
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }
