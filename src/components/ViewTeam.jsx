@@ -7,7 +7,7 @@ const ViewTeam = () => {
     const [data, changeData] = useState([])
 
     const fetchData = () => {
-        axios.get("http://localhost:4000/view-team").then(
+        axios.post("http://localhost:4000/view-team").then(
             (response) => {
                 changeData(response.data)
             }
