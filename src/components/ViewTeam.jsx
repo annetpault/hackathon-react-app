@@ -21,86 +21,54 @@ const ViewTeam = () => {
     )
 
     return (
-        <div>
-<NavigationBar />
+        
+
             <div className="container">
-                <div className="row">
-                    <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <div className="row g-3">
-                            {data.map(
-                                (value, index) => {
-                                    return (
-                                        <div className="col col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
-                                            
+                <NavigationBar />
+    <div className="row">
+        <div className="col-12">
 
-                                                    <table className="table table-bordered" 
-                                                     style={{ tableLayout: "fixed", width: "100%" }} >
-                                                        <tbody>
-                                                            <tr>
-                                                                <th>Team ID</th>
-                                                                <td>{value.teamId}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Team Name</th>
-                                                                <td>{value.teamName}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Team Leader Name</th>
-                                                                <td>{value.teamLname}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Leader Email</th>
-                                                                <td>{value.leaderEmail}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>College Name</th>
-                                                                <td>{value.collegeName}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Number of Members</th>
-                                                                <td>{value.noMembers}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Project Title</th>
-                                                                <td>{value.projectTitle}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Problem Statement Track</th>
-                                                                <td>{value.problemStat}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Technology Stack</th>
-                                                                <td>{value.techStack}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Mentor Name</th>
-                                                                <td>{value.mentorName}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Registration Date</th>
-                                                                <td>{value.regDate}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Table</th>
-                                                                <td>{value.table}</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            
-                                       
-                                    )
-                                }
-                            )}
+            <table className="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Team ID</th>
+                        <th>Team Name</th>
+                        <th>Team Leader Name</th>
+                        <th>Leader Email</th>
+                        <th>College Name</th>
+                        <th>No. of Members</th>
+                        <th>Project Title</th>
+                        <th>Problem Statement</th>
+                        <th>Technology Stack</th>
+                        <th>Mentor Name</th>
+                        <th>Registration Date</th>
+                        <th>Table</th>
+                    </tr>
+                </thead>
 
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
+                <tbody>
+                    {data.map((value, index) => (
+                        <tr key={index}>
+                            <td>{value.teamId}</td>
+                            <td>{value.teamName}</td>
+                            <td>{value.teamLname}</td>
+                            <td>{value.leaderEmail}</td>
+                            <td>{value.collegeName}</td>
+                            <td>{value.noMembers}</td>
+                            <td>{value.projectTitle}</td>
+                            <td>{value.problemStat}</td>
+                            <td>{value.techStack}</td>
+                            <td>{value.mentorName}</td>
+                            <td>{value.regDate}</td>
+                            <td>{value.table}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
 
         </div>
+    </div>
+</div>
     )
 }
 
